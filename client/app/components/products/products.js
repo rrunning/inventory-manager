@@ -14,13 +14,6 @@ const productsModule = angular.module('products', [
 			.state('products', {
 				url: '/products',
 				component: 'products',
-	// 			resolve: {
-	// 				firstJoke: (Norris) => {
-	// 					return Norris.grabJoke().then(response => {
-	// 						return response.data.value.joke;
-	// 					});
-	// 				}
-				// }
 			});
 	})
 

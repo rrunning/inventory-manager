@@ -1,11 +1,11 @@
 import angular from 'angular';
 
-let norrisModule = angular.module('about.norris', [])
-	.factory('Norris', Norris)
+let productsServiceModule = angular.module('about.productsService', [])
+	.factory('ProductsService', ProductsService)
 	.name;
 // api is at http://www.icndb.com/api/
 
-function Norris($http) {
+function ProductsService($http) {
 	const service = {
 		test: () => {
 			alert("hello World");
@@ -17,5 +17,5 @@ function Norris($http) {
 	return service;
 }
 
-Norris.$inject = ['$http'];
-export default norrisModule;
+ProductsService.$inject = ['$http'];
+export default productsServiceModule;

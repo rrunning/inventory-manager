@@ -1,15 +1,15 @@
-// class ProductsController {
-// 	constructor(Norris) {
-// 		this.Norris = Norris;
-// 		this.newJoke = '';
-// 	}
-// 	fetchJoke() {
-// 		this.Norris.grabJoke().then(response => {
-// 			this.newJoke = response.data.value.joke;
-// 		});
-// 	}
-// }
+class ProductsController {
+	constructor(ProductsService) {
+		this.ProductsService = ProductsService;
+		this.newJoke = '';
+	}
+	fetchJoke() {
+		this.ProductsService.grabJoke().then(response => {
+			this.newJoke = response.data.value.joke;
+		});
+	}
+}
 
-// ProductsController.$inject = ['Norris'];
+ProductsController.$inject = ['ProductsService'];
 
-// export default ProductsController;
+export default ProductsController;

@@ -3,9 +3,6 @@ import controller from './products.controller';
 import './products.scss';
 
 let homeComponent = {
-	// bindings: {
-	// 	firstJoke: '<'
-	// },
 	template,
 	controller
 };
