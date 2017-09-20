@@ -8,7 +8,7 @@ let componentModule = angular.module('app.components', [
   Home,
   About,
   Products,
-  SignUp,
+  SignUp
 ])
 
 .name;
