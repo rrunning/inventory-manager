@@ -2,9 +2,9 @@ import template from './products.html';
 import controller from './products.controller';
 import './products.scss';
 
-let homeComponent = {
+let productsComponent = {
 	template,
 	controller
 };
 
-export default homeComponent;
+export default productsComponent;
