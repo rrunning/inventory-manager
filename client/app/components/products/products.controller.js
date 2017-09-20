@@ -1,11 +1,14 @@
 class ProductsController {
 	constructor(ProductsService) {
 		this.ProductsService = ProductsService;
-		this.newJoke = '';
+		this.productList = '';
+	// this.ProductsService.test();
+		this.fetchProducts();
 	}
-	fetchJoke() {
-		this.ProductsService.grabJoke().then(response => {
-			this.newJoke = response.data.value.joke;
+	fetchProducts() {
+		this.ProductsService.fetchProducts().then(response => {
+			this.productList = response.data;
+			console.log(this.productList);
 		});
 	}
 }
