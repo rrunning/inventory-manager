@@ -2,7 +2,6 @@ class ProductsController {
 	constructor(ProductsService) {
 		this.ProductsService = ProductsService;
 		this.productList = '';
-	// this.ProductsService.test();
 		this.fetchProducts();
 	}
 	fetchProducts() {

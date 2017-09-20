@@ -7,9 +7,6 @@ let productsServiceModule = angular.module('about.productsService', [])
 
 function ProductsService($http) {
 	const service = {
-		// test: () => {
-		// 	alert("hello World");
-		// },
 		fetchProducts: () => {
 			return $http.get('http://wta-inventorybackend.herokuapp.com/api/v1/product');
 		},
