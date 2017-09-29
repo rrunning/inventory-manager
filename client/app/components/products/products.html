@@ -3,6 +3,22 @@
 <section>
 	<h1>Products</h1>
 	<div class="product-list">
-		
+		<div ng-repeat="product in $ctrl.productList" class="product">
+			<div>
+				Name: {{product.name}}
+			</div>
+			<div>
+				Description: {{ product.description }}
+			</div>
+			<div>
+				Amount in stock: {{ product.amt }}
+			</div>
+			<div>
+				Price: {{ product.price }}
+			</div>
+			<div>
+				Cost: {{ product.cost }}
+			</div>
+		</div>
 	</div>
 </section>

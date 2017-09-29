@@ -14,6 +14,13 @@ const productsModule = angular.module('products', [
 			.state('products', {
 				url: '/products',
 				component: 'products',
+				resolve: {
+					productList: (ProductsService) => {
+						return ProductsService.fetchProducts().then(response => {
+							return response.data;
+						});
+					},
+				}
 			});
 	})
 
