@@ -4,7 +4,11 @@ import './products.scss';
 
 let productsComponent = {
 	template,
-	controller
+	controller,
+	bindings: {
+		productList: '<',
+	}
 };
+
 
 export default productsComponent;

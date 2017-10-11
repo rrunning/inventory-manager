@@ -5,10 +5,10 @@
 	<div class="product-list">
 		<div ng-repeat="product in $ctrl.productList" class="product">
 			<div class="product-image">
-				<img ng-src = "{{product.imgThumbnail}}" style="width: 300px;"/>
+				<img ng-src = "{{ product.imgThumbnail }}" style="width: 300px;"/>
 			</div>
 			<div class="name">
-				Name: {{product.name}}
+				Name: {{ product.name }}
 			</div>
 			<div>
 				Description: {{ product.description }}
@@ -21,6 +21,9 @@
 			</div>
 			<div>
 				Cost: {{ product.cost }}
+			</div>
+			<div>
+				<a ng-click="$ctrl.viewProductDetails(product.id);">View Product</a>
 			</div>
 		</div>
 	</div>

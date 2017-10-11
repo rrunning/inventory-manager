@@ -10,9 +10,9 @@ function ProductsService($http) {
 		fetchProducts: () => {
 			return $http.get('http://wta-inventorybackend.herokuapp.com/api/v1/product');
 		},
-		// addImage: (prodId, productImage) => {
-		// 	return $http.put('http://wta-inventorybackend.herokuapp.com/api/v1/product/' + prodId, imgThumbnail);
-		// },
+		importProduct: (prodId) => {
+			return $http.get('http://wta-inventorybackend.herokuapp.com/api/v1/product/' + prodId);
+		},
 	}
 	return service;
 }

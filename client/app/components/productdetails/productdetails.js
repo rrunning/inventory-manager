@@ -12,8 +12,15 @@ const productdetailsModule = angular.module('productdetails', [
 		"ngInject";
 		$stateProvider
 			.state('productdetails', {
-				url: '/productdetails',
+				url: '/productdetails/:id',
 				component: 'productdetails',
+				resolve: {
+					importedProduct: (ProductsService, $stateParams) => {
+						return ProductsService.importProduct($stateParams.id).then(response => {
+							return response.data;
+						});
+					},
+				}
 			});
 	})
 
