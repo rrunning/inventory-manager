@@ -1,9 +1,8 @@
 class SignUpController {
-	constructor(SignUpService) {
-		this.SignUpService = SignUpService;
+	constructor() {
 	}
 }
 
-SignUpController.$inject = ['SignUpService'];
+SignUpController.$inject = [];
 
 export default SignUpController;
