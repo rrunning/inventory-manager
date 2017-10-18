@@ -1,6 +1,7 @@
 class SignUpController {
 	constructor() {
 	}
+	
 }
 
 SignUpController.$inject = [];
