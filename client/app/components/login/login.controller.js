@@ -1,4 +1,4 @@
-class SignUpController {
+class LoginController {
 	constructor(Authentication) {
 		this.user = {
 			email: null,
@@ -8,12 +8,12 @@ class SignUpController {
 		};
 		this.Authentication = Authentication;
 	}
-	sendSignUp (user) {
-		this.Authentication.signup(user);
+	sendLogin (user) {
+		this.Authentication.login(user);
 		this.user = {};
 	}
 }
 
-SignUpController.$inject = ['Authentication'];
+LoginController.$inject = ['Authentication'];
 
-export default SignUpController;
+export default LoginController;
