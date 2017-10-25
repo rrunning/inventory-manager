@@ -4,7 +4,7 @@ let authenticationModule = angular.module('about.authentication', [])
 	.factory('Authentication', Authentication)
 	.name;
 
-function Authentication($http) {
+function Authentication($http, $state) {
 	const service = {
 		successAuth: (res) => {
 			console.log('success - auth');
@@ -49,7 +49,7 @@ function Authentication($http) {
 			return user;
 		},
 		logout: () => {
-			delete $localStorage.token;
+			delete localStorage.token;
 			service.loggedIn = false;
 			service.user = null;
 			$state.go('products');
@@ -58,5 +58,5 @@ function Authentication($http) {
 	return service;
 }
 
-Authentication.$inject = ['$http'];
+Authentication.$inject = ['$http', '$state'];
 export default authenticationModule;

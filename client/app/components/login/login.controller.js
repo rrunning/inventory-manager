@@ -8,9 +8,12 @@ class LoginController {
 		};
 		this.Authentication = Authentication;
 	}
-	sendLogin (user) {
+	sendLogin(user) {
 		this.Authentication.login(user);
 		this.user = {};
+	}
+	logOut() {
+		this.Authentication.logout();
 	}
 }
 
