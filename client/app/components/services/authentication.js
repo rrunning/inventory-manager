@@ -4,24 +4,24 @@ let authenticationModule = angular.module('about.authentication', [])
 	.factory('Authentication', Authentication)
 	.name;
 
-function Authentication($http, $state) {
+function Authentication($http, $state, $localStorage) {
 	const service = {
-		successAuth: (res) => {
-			console.log('success - auth');
-			$localStorage.token = res.token;
-			var tokenClaims = getClaimsFromToken();
-			service.user = tokenClaims;
-			service.loggedIn = true;
-		},
 		signup: (user) => {
-		  return $http.post('http://wta-inventorybackend.herokuapp.com/api/v1' + '/signup', user).then(function (response) {
-		    this.successAuth(response.data);
+		  return $http.post('http://wta-inventorybackend.herokuapp.com/api/v1' + '/signup', user).then(response => {
+		    service.successAuth(response.data);
 		  }, function (err) {});
 		},
 		login: (user) => {
-		  return $http.post('http://wta-inventorybackend.herokuapp.com/api/v1' + '/login', user).then(function (response) {
-		    this.successAuth(response.data);
+		  return $http.post('http://wta-inventorybackend.herokuapp.com/api/v1' + '/login', user).then(response => {
+				service.successAuth(response.data);
 		  }, function (err) {});
+		},
+		successAuth: (res) => {
+			console.log('success - auth');
+			$localStorage.token = res.token;
+			var tokenClaims = service.getClaimsFromToken();
+			service.user = tokenClaims;
+			service.loggedIn = true;
 		},
 		urlBase64Decode: (str) => {
 			var output = str.replace('-', '+').replace('_', '/');
@@ -44,7 +44,7 @@ function Authentication($http, $state) {
 			var user = {};
 			if (typeof token !== 'undefined') {
 				var encoded = token.split('.')[1];
-				user = JSON.parse(urlBase64Decode(encoded));
+				user = JSON.parse(service.urlBase64Decode(encoded));
 			}
 			return user;
 		},
@@ -58,5 +58,5 @@ function Authentication($http, $state) {
 	return service;
 }
 
-Authentication.$inject = ['$http', '$state'];
+Authentication.$inject = ['$http', '$state', '$localStorage'];
 export default authenticationModule;
