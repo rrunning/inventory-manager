@@ -9,7 +9,7 @@
 				<label>First Name: <input type="text" ng-model="$ctrl.user.fName" /></label>
 				<label>Last Name: <input type="text" ng-model="$ctrl.user.lName" /></label>
 				<label>Password: <input type="text" ng-model="$ctrl.user.password" /></label>
-				<label>Verify Password (passwords must match): <input type="text" /></label>
+				<label>Verify Password (passwords must match): <input type="text" ng-model="$ctrl.passwordVerification" /></label>
 				<button ng-click="$ctrl.sendSignUp($ctrl.user)" type="submit">Sign Up</button>
 			</form>
 		</div>

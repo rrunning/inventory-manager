@@ -7,10 +7,15 @@ class SignUpController {
 			lName: null,
 		};
 		this.Authentication = Authentication;
+		this.passwordVerification = null;
 	}
 	sendSignUp (user) {
-		this.Authentication.signup(user);
-		this.user = {};
+		if (this.user.password === this.passwordVerification){
+			this.Authentication.signup(user);
+			this.user = {};
+		} else {
+			alert ('Passwords do not match');
+		}
 	}
 }
 
