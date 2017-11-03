@@ -1,8 +1,11 @@
 class OrderHistoryController {
-	constructor() {
+	constructor(History) {
+		this.Hisotry = History;
+		
+		console.log(History);
 	}
 }
 
-OrderHistoryController.$inject = [];
+OrderHistoryController.$inject = ['History'];
 
 export default OrderHistoryController;

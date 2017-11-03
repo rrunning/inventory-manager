@@ -1,10 +1,10 @@
 import angular from 'angular';
 
 let historyModule = angular.module('about.history', [])
-	.factory('history', history)
+	.factory('History', History)
 	.name;
 
-function history($http) {
+function History($http) {
 	const service = {
 		fetchHistory: () => {
 			return $http.get('http://wta-inventorybackend.herokuapp.com/api/v1/product/summary');
@@ -13,5 +13,5 @@ function history($http) {
 	return service;
 }
 
-history.$inject = ['$http'];
+History.$inject = ['$http'];
 export default historyModule;
