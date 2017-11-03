@@ -6,6 +6,7 @@ let authenticationModule = angular.module('about.authentication', [])
 
 function Authentication($http, $state, $localStorage) {
 	const service = {
+		loggedIn: null,
 		signup: (user) => {
 		  return $http.post('http://wta-inventorybackend.herokuapp.com/api/v1' + '/signup', user).then(response => {
 		    service.successAuth(response.data);
@@ -22,6 +23,7 @@ function Authentication($http, $state, $localStorage) {
 			var tokenClaims = service.getClaimsFromToken();
 			service.user = tokenClaims;
 			service.loggedIn = true;
+			$state.go('products');
 		},
 		urlBase64Decode: (str) => {
 			var output = str.replace('-', '+').replace('_', '/');
