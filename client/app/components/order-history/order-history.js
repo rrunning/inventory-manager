@@ -14,6 +14,13 @@ const orderHistoryModule = angular.module('order-history', [
 			.state('order-history', {
 				url: '/order-history',
 				component: 'orderHistory',
+				// resolve: {
+				// 	fetchHistory: (History) => {
+				// 		return History.fetchHistory().then(response => {
+				// 			return response.data;
+				// 		});
+				// 	},
+				// },
 			});
 	})
 

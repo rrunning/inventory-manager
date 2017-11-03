@@ -20,7 +20,7 @@ const productsModule = angular.module('products', [
 							return response.data;
 						});
 					},
-				}
+				},
 			});
 	})
 
