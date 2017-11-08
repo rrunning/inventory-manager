@@ -2,6 +2,9 @@
 <h1>{{ $ctrl.name }}</h1>
 <section>
 	<h1> {{ product.name }}</h1>
+	<div class="admin-edit">
+		<button ng-click="$ctrl.allowEdit" ng-hide="$ctrl.adminStatus === false">Edit Details</button>
+	</div>
 	<div class="product-list">
 		<div ng-repeat="product in $ctrl.importedProduct" class="product">
 			<div class="product-image">

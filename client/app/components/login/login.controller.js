@@ -8,7 +8,7 @@ class LoginController {
 		};
 		this.$state = $state;
 		this.Authentication = Authentication;
-		console.log(this.Authentication.loggedIn);
+		// console.log(this.Authentication.loggedIn);
 		// if (this.Authentication.loggedIn === true) {
 		// 	console.log(this.Authentication.loggedIn);
 		// 	this.$state.go('products');

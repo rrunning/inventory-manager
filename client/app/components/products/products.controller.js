@@ -3,7 +3,7 @@ class ProductsController {
 		this.$state = $state;
 		this.carObj = {};
 		this.cheeseObj = {};
-		console.log(this);
+		// console.log(this);
 	}
 	$onInit() {
 		this.fetchProducts();

@@ -4,9 +4,10 @@ let authenticationModule = angular.module('about.authentication', [])
 	.factory('Authentication', Authentication)
 	.name;
 
-function Authentication($http, $state, $localStorage) {
+function Authentication($http, $state, $localStorage,) {
 	const service = {
 		loggedIn: null,
+		user: {}, 
 		signup: (user) => {
 		  return $http.post('http://wta-inventorybackend.herokuapp.com/api/v1' + '/signup', user).then(response => {
 		    service.successAuth(response.data);
@@ -18,7 +19,7 @@ function Authentication($http, $state, $localStorage) {
 		  }, function (err) {});
 		},
 		successAuth: (res) => {
-			console.log('success - auth');
+			// console.log('success - auth');
 			$localStorage.token = res.token;
 			var tokenClaims = service.getClaimsFromToken();
 			service.user = tokenClaims;
@@ -43,12 +44,12 @@ function Authentication($http, $state, $localStorage) {
 		},
 		getClaimsFromToken: () => {
 			var token = $localStorage.token;
-			var user = {};
 			if (typeof token !== 'undefined') {
 				var encoded = token.split('.')[1];
-				user = JSON.parse(service.urlBase64Decode(encoded));
+				service.user = JSON.parse(service.urlBase64Decode(encoded));
 			}
-			return user;
+			// console.log(service.user);
+			return service.user;
 		},
 		logout: () => {
 			delete localStorage.token;
@@ -60,5 +61,5 @@ function Authentication($http, $state, $localStorage) {
 	return service;
 }
 
-Authentication.$inject = ['$http', '$state', '$localStorage'];
+Authentication.$inject = ['$http', '$state', '$localStorage',];
 export default authenticationModule;
