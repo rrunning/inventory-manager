@@ -48,7 +48,6 @@ function Authentication($http, $state, $localStorage,) {
 				var encoded = token.split('.')[1];
 				service.user = JSON.parse(service.urlBase64Decode(encoded));
 			}
-			// console.log(service.user);
 			return service.user;
 		},
 		logout: () => {
