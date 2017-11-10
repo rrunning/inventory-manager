@@ -6,6 +6,7 @@ class ProductdetailsController {
 		this.$stateParams = $stateParams;
 		this.adminStatus = false;
 		this.isAdmin();
+		this.allowEdit = false;
 	}
 	importProduct(id) {
 		this.ProductsService.importProduct(id).then(response => {
@@ -17,8 +18,13 @@ class ProductdetailsController {
 			this.adminStatus = true;
 		}
 	}
-	allowEdit() {
-		console.log('hey duude');
+	initiateEdit() {
+		this.allowEdit = true;
+	}
+	saveEdit() {
+		this.ProductsService.editProduct(importedProduct).then(response => {
+
+		})
 	}
 }
 

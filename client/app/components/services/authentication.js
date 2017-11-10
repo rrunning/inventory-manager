@@ -13,6 +13,13 @@ function Authentication($http, $state, $localStorage,) {
 		    service.successAuth(response.data);
 		  }, function (err) {});
 		},
+		init: () => {
+			if ($localStorage.token) {
+				service.user = getClaimsFromToken();
+				service.loggedIn = true;
+				console.log('brotato chip');
+			}
+		},
 		login: (user) => {
 		  return $http.post('http://wta-inventorybackend.herokuapp.com/api/v1' + '/login', user).then(response => {
 				service.successAuth(response.data);
@@ -59,6 +66,8 @@ function Authentication($http, $state, $localStorage,) {
 		},
 	}
 	return service;
+	service.init();
+
 }
 
 Authentication.$inject = ['$http', '$state', '$localStorage',];

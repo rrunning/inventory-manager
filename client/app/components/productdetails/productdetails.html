@@ -3,24 +3,31 @@
 <section>
 	<h1> {{ product.name }}</h1>
 	<div class="admin-edit">
-		<button ng-click="$ctrl.allowEdit" ng-hide="$ctrl.adminStatus === false">Edit Details</button>
+		<button ng-click="$ctrl.initiateEdit()" ng-hide="$ctrl.adminStatus === false">Edit Details</button>
+		<button ng-click="$ctrl.saveEdit()" ng-hide="$ctrl.adminStatus === false">Save Edits</button>
 	</div>
 	<div class="product-list">
 		<div ng-repeat="product in $ctrl.importedProduct" class="product">
 			<div class="product-image">
 				<img ng-src="{{product.imgThumbnail}}" style="width: 300px;" />
 			</div>
-			<div>
-				Description: {{ product.description }}
+			<div class="txt-color-blue">
+				Description:
+				<span ng-hide="$ctrl.allowEdit === true"> {{ product.description }}</span>
+				<input type="text" name="edit" ng-model="$ctrl.product.description" ng-show="$ctrl.allowEdit === true">
 			</div>
 			<div>
 				Amount in stock: {{ product.amt }}
 			</div>
 			<div>
-				Price: {{ product.price }}
+				Price:
+				<span ng-hide="$ctrl.allowEdit === true"> {{ product.price }}</span>
+				<input type="text" name="edit" ng-model="$ctrl.product.price" ng-show="$ctrl.allowEdit === true">
 			</div>
 			<div>
-				Cost: {{ product.cost }}
+				Cost:
+				<span ng-hide="$ctrl.allowEdit === true"> {{ product.cost }}</span>
+				<input type="text" name="edit" ng-model="$ctrl.product.cost" ng-show="$ctrl.allowEdit === true">
 			</div>
 		</div>
 	</div>
