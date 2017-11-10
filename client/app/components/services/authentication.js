@@ -52,14 +52,14 @@ function Authentication($http, $state, $localStorage,) {
 			return service.user;
 		},
 		logout: () => {
-			delete localStorage.token;
+			delete $localStorage.token;
 			service.loggedIn = false;
 			service.user = null;
 			$state.go('products');
 		},
 	}
-	return service;
 	init();
+	return service;
 	function init () {
 		if ($localStorage.token) {
 			service.user = getClaimsFromToken();
