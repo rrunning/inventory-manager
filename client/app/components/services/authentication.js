@@ -62,9 +62,8 @@ function Authentication($http, $state, $localStorage,) {
 	return service;
 	function init () {
 		if ($localStorage.token) {
-			service.user = getClaimsFromToken();
+			service.user = service.getClaimsFromToken();
 			service.loggedIn = true;
-			console.log('brotato chip');
 		}
 	};
 
