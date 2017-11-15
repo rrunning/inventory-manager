@@ -29,9 +29,6 @@ class ProductdetailsController {
 			this.allowEdit = false;
 		})
 	}
-	// deleteProduct() {
-
-	// }
 }
 
 ProductdetailsController.$inject = ['ProductsService', '$stateParams', 'Authentication'];
