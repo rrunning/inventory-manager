@@ -17,7 +17,7 @@ const productdetailsModule = angular.module('productdetails', [
 				resolve: {
 					importedProduct: (ProductsService, $stateParams) => {
 						return ProductsService.importProduct($stateParams.id).then(response => {
-							return response.data;
+							return response.data[0];
 						});
 					},
 				}

@@ -11,6 +11,7 @@ class ProductdetailsController {
 	importProduct(id) {
 		this.ProductsService.importProduct(id).then(response => {
 			this.importedProduct = response.data;
+			console.log(importedProduct);
 		});
 	}
 	isAdmin() {
@@ -22,10 +23,15 @@ class ProductdetailsController {
 		this.allowEdit = true;
 	}
 	saveEdit() {
-		this.ProductsService.editProduct(importedProduct).then(response => {
-
+		const editedProd = {...this.importedProduct, ...this.product};
+		this.ProductsService.editProduct(editedProd).then(response => {
+			this.importedProduct = editedProd;
+			this.allowEdit = false;
 		})
 	}
+	// deleteProduct() {
+
+	// }
 }
 
 ProductdetailsController.$inject = ['ProductsService', '$stateParams', 'Authentication'];

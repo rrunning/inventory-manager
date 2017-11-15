@@ -7,26 +7,31 @@
 		<button ng-click="$ctrl.saveEdit()" ng-hide="$ctrl.adminStatus === false">Save Edits</button>
 	</div>
 	<div class="product-list">
-		<div ng-repeat="product in $ctrl.importedProduct" class="product">
+		<div class="product">
 			<div class="product-image">
-				<img ng-src="{{product.imgThumbnail}}" style="width: 300px;" />
+				<img ng-src="{{ $ctrl.importedProduct.imgThumbnail}}" style="width: 300px;" />
+			</div>
+			<div>
+				Name: 
+				<span ng-hide="$ctrl.allowEdit === true"> {{ $ctrl.importedProduct.name }}</span>
+				<input type="text" name="edit" ng-model="$ctrl.product.name" ng-show="$ctrl.allowEdit === true">
 			</div>
 			<div class="txt-color-blue">
 				Description:
-				<span ng-hide="$ctrl.allowEdit === true"> {{ product.description }}</span>
+				<span ng-hide="$ctrl.allowEdit === true"> {{ $ctrl.importedProduct.description }}</span>
 				<input type="text" name="edit" ng-model="$ctrl.product.description" ng-show="$ctrl.allowEdit === true">
 			</div>
 			<div>
-				Amount in stock: {{ product.amt }}
+				Amount in stock: {{ $ctrl.importedProduct.amt }}
 			</div>
 			<div>
 				Price:
-				<span ng-hide="$ctrl.allowEdit === true"> {{ product.price }}</span>
+				<span ng-hide="$ctrl.allowEdit === true"> {{ $ctrl.importedProduct.price }}</span>
 				<input type="text" name="edit" ng-model="$ctrl.product.price" ng-show="$ctrl.allowEdit === true">
 			</div>
 			<div>
 				Cost:
-				<span ng-hide="$ctrl.allowEdit === true"> {{ product.cost }}</span>
+				<span ng-hide="$ctrl.allowEdit === true"> {{ $ctrl.importedProduct.cost }}</span>
 				<input type="text" name="edit" ng-model="$ctrl.product.cost" ng-show="$ctrl.allowEdit === true">
 			</div>
 		</div>
