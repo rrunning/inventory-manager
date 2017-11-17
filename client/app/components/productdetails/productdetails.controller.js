@@ -31,8 +31,7 @@ class ProductdetailsController {
 		})
 	}
 	addToCart(product) {
-		this.ShoppingCart.test();
-		console.log(product);
+		this.ShoppingCart.addProduct(product);
 	}
 }
 
