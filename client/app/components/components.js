@@ -6,6 +6,7 @@ import SignUp from './sign-up/sign-up';
 import OrderHistory from './order-history/order-history';
 import Login from './login/login';
 import Productdetails from './productdetails/productdetails';
+import Cart from './cart/cart';
 
 let componentModule = angular.module('app.components', [
   Home,
@@ -14,7 +15,8 @@ let componentModule = angular.module('app.components', [
   SignUp,
   OrderHistory,
   Login,
-  Productdetails
+  Productdetails,
+  Cart
 ])
 
 .name;
