@@ -6,6 +6,7 @@ let shoppingCartModule = angular.module('about.shoppingCart', [])
 
 function ShoppingCart($http) {
 	const service = {
+		cart: {},
 		test: () => {
 			console.log('IT WORKS, ADD SOME STUFF BRO');
 		},

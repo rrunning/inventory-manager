@@ -1,6 +1,7 @@
 class ProductdetailsController {
-	constructor(ProductsService, $stateParams, Authentication) {
+	constructor(ProductsService, $stateParams, Authentication, ShoppingCart) {
 		this.ProductsService = ProductsService;
+		this.ShoppingCart = ShoppingCart;
 		this.Authentication = Authentication;
 		this.importedProduct = '';
 		this.$stateParams = $stateParams;
@@ -29,8 +30,12 @@ class ProductdetailsController {
 			this.allowEdit = false;
 		})
 	}
+	addToCart(product) {
+		this.ShoppingCart.test();
+		console.log(product);
+	}
 }
 
-ProductdetailsController.$inject = ['ProductsService', '$stateParams', 'Authentication'];
+ProductdetailsController.$inject = ['ProductsService', '$stateParams', 'Authentication', 'ShoppingCart'];
 
 export default ProductdetailsController;
