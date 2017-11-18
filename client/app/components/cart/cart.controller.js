@@ -4,7 +4,7 @@ class CartController {
 		this.ShoppingCart = ShoppingCart;
 		this.cartItems = this.ShoppingCart.cart;
 		// console.log(this.cartItems.product.name);
-		console.log(this.cartItems[0].product.name);
+		console.log(this.cartItems[1].product.name);
 	}
 }
 
