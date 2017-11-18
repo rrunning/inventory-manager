@@ -1,7 +1,13 @@
-class HomeController {
-	constructor() {
-		this.name = 'home';
+class CartController {
+	constructor(ShoppingCart) {
+		this.name = 'cart';
+		this.ShoppingCart = ShoppingCart;
+		this.cartItems = this.ShoppingCart.cart;
+		// console.log(this.cartItems.product.name);
+		console.log(this.cartItems[0].product.name);
 	}
 }
 
-export default HomeController;
+CartController.$inject = ['ShoppingCart'];
+
+export default CartController;
