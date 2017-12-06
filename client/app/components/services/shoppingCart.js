@@ -30,7 +30,7 @@ function ShoppingCart($http) {
 			if (service.cart.length >= 1) {
 				for (i = 0; i < service.cart.length; i++) {
 					if (product.id === [i].id) {
-						[i].qty = [i].qty + quantity
+						[i].qty = [i].qty + quantity;
 					}
 				}
 			} else {
