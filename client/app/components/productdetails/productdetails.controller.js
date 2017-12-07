@@ -33,6 +33,17 @@ class ProductdetailsController {
 	addToCart(product) {
 		this.ShoppingCart.addProduct(product);
 	}
+	modify_qty(val) {
+    var qty = document.getElementById('prod-qty').value;
+    var new_qty = parseInt(qty,10) + val;
+    
+    if (new_qty < 0) {
+        new_qty = 0;
+    }
+    
+    document.getElementById('prod-qty').value = new_qty;
+    return new_qty;
+	}
 }
 
 ProductdetailsController.$inject = ['ProductsService', '$stateParams', 'Authentication', 'ShoppingCart'];
