@@ -28,7 +28,7 @@ function ShoppingCart($http) {
 		},
 		addProduct: (product, quantity) => {
 			if (service.cart.length >= 1) {
-				for (i = 0; i < service.cart.length; i++) {
+				for (let i = 0; i < service.cart.length; i++) {
 					if (product.id === [i].id) {
 						[i].qty = [i].qty + quantity;
 					}
@@ -36,7 +36,7 @@ function ShoppingCart($http) {
 			} else {
 				service.cart.push({
 					id: product.id,
-					qty: qty,
+					qty: quantity,
 				});
 			}
 			console.log(service.cart);
