@@ -23,21 +23,21 @@ function ShoppingCart($http) {
 				}
 			],
 		},
-		test: () => {
-			console.log('IT WORKS, ADD SOME STUFF BRO');
+		alreadyExistsInCart:(product) => {
+			for (let i = 0; i <= service.cart.length; i++) {
+				if (product.id === service.cart[i].id) {
+					return true;
+				} else {
+					return false;
+				}
+			}
 		},
-		addProduct: (product, quantity) => {
-			if (service.cart.length >= 1) {
-				service.cart.forEach(item => {
-					if (item.id === product.id) {
-						item.qty = item.qty + Number(quantity);
-					}
-				})
+		addProduct:(product, quantity) => {
+			let isInCart = alreadyExistsInCart(product);
+			if (isInCart) {
+				// if true - run adjust quantity function
 			} else {
-				service.cart.push({
-					id: product.id,
-					qty: Number(quantity),
-				});
+				// if false - run addToCart function
 			}
 			console.log(service.cart);
 		}
