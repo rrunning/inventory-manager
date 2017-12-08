@@ -28,15 +28,15 @@ function ShoppingCart($http) {
 		},
 		addProduct: (product, quantity) => {
 			if (service.cart.length >= 1) {
-				for (let i = 0; i < service.cart.length; i++) {
-					if (product.id === [i].id) {
-						[i].qty = [i].qty + quantity;
+				service.cart.forEach(item => {
+					if (item.id === product.id) {
+						item.qty = item.qty + Number(quantity);
 					}
-				}
+				})
 			} else {
 				service.cart.push({
 					id: product.id,
-					qty: quantity,
+					qty: Number(quantity),
 				});
 			}
 			console.log(service.cart);
