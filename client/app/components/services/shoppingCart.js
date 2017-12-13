@@ -6,8 +6,7 @@ let shoppingCartModule = angular.module('about.shoppingCart', [])
 
 function ShoppingCart($http) {
 	const service = {
-		cart: [
-		],
+		cart: {},
 		transaction: {
 			type: {
 				id: null,
@@ -23,37 +22,25 @@ function ShoppingCart($http) {
 				}
 			],
 		},
-		isCartEmpty:() => {
-			if(service.cart.length < 1) {
-				return true;
-			}	else {
-				return false;
-			}
-		},
 		alreadyExistsInCart:(product) => {
-			console.log(product);
-			for (let i = 0; i <= service.cart.length; i++) {
-				if (product.id === service.cart[i].id) {
-					return true;
-				} else {
-					return false;
-				}
-			}
+			// console.log(product);
+			return !!service.cart[product.id];
 		},
-		adjustQuantity: () => {
-
+		adjustQuantity: (product, quantity) => {
+			const prodId = product.id;
+			const oldQty = Number(service.cart[prodId].qty);
+			const newQty = Number(quantity) + oldQty;
+			return newQty;
 		},
 		addProduct:(product, quantity) => {
-			if (!service.isCartEmpty()) {
-				let isInCart = service.alreadyExistsInCart(product);
-				if (isInCart) {
-					// if true - run adjust quantity function
-				} else {
-					// if false - run addToCart function
-				}
+			const prodId = product.id;
+			if (service.alreadyExistsInCart(product)) {
+				const cartQty = service.adjustQuantity(product, quantity);
+				// console.log(service.cart[prodId]);
+				service.cart[prodId].qty = cartQty;
 			} else {
-				// push item into cart
-				service.cart.push({id: product.id, qty: quantity})
+				// add to cart
+				service.cart[prodId] = { id: prodId, qty: Number(quantity) };
 			}
 			console.log(service.cart);
 		}
