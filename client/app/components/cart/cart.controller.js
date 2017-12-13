@@ -1,14 +1,12 @@
 class CartController {
-	constructor(ShoppingCart) {
+	constructor(ShoppingCart, $localStorage) {
 		this.name = 'cart';
 		this.ShoppingCart = ShoppingCart;
 		this.cartItems = this.ShoppingCart.cart;
-	}
-	createCart() {
-		
+		console.log($localStorage.cart);
 	}
 }
 
-CartController.$inject = ['ShoppingCart'];
+CartController.$inject = ['ShoppingCart', '$localStorage'];
 
 export default CartController;

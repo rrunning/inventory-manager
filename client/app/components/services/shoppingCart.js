@@ -4,9 +4,9 @@ let shoppingCartModule = angular.module('about.shoppingCart', [])
 	.factory('ShoppingCart', ShoppingCart)
 	.name;
 
-function ShoppingCart($http) {
+function ShoppingCart($http, $localStorage) {
 	const service = {
-		cart: {},
+		cart: $localStorage.cart || {},
 		transaction: {
 			type: {
 				id: null,
@@ -38,9 +38,11 @@ function ShoppingCart($http) {
 				const cartQty = service.adjustQuantity(product, quantity);
 				// console.log(service.cart[prodId]);
 				service.cart[prodId].qty = cartQty;
+				$localStorage.cart = service.cart;
 			} else {
 				// add to cart
 				service.cart[prodId] = { id: prodId, qty: Number(quantity) };
+				$localStorage.cart = service.cart;
 			}
 			console.log(service.cart);
 		}
@@ -48,5 +50,5 @@ function ShoppingCart($http) {
 	return service;
 }
 
-ShoppingCart.$inject = ['$http'];
+ShoppingCart.$inject = ['$http', '$localStorage'];
 export default shoppingCartModule;

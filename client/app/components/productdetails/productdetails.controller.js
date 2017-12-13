@@ -31,8 +31,7 @@ class ProductdetailsController {
 		})
 	}
 	addToCart(product) {
-		const quantity = document.getElementById('prod-qty').value;
-		// console.log(quantity);
+		const quantity = document.getElementById('prod-qty').value;		// console.log(quantity);
 		this.ShoppingCart.addProduct(product, quantity);
 	}
 	modifyQty(val) {
