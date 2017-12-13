@@ -5,7 +5,6 @@
 	</div>
 	<div>Products:</div>
 	<div>[ This will be a list of all the products in the cart ]</div>
-	<div>{{ $ctrl.cartItems }}</div>
 		<table>
 			<tr>
 				<th>Product Name</th>
@@ -13,10 +12,10 @@
 			</tr>
 			<tr ng-repeat="(key, value) in $ctrl.cartItems">
 				<td>
-					<span>{{ $ctrl.cartItems }}</span>
+					<span>{{ key }}</span>
 				</td>
 				<td>
-					<span>Cell 2</span>
+					<span>{{ value.qty }}</span>
 				</td>
 			</tr>
 		</table>
