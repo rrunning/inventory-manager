@@ -53,6 +53,7 @@ function ShoppingCart($http) {
 				}
 			} else {
 				// push item into cart
+				service.cart.push({id: product.id, qty: quantity})
 			}
 			console.log(service.cart);
 		}
