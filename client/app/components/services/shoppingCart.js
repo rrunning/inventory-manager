@@ -23,7 +23,15 @@ function ShoppingCart($http) {
 				}
 			],
 		},
+		isCartEmpty:() => {
+			if(service.cart.length < 1) {
+				return true;
+			}	else {
+				return false;
+			}
+		},
 		alreadyExistsInCart:(product) => {
+			console.log(product);
 			for (let i = 0; i <= service.cart.length; i++) {
 				if (product.id === service.cart[i].id) {
 					return true;
@@ -32,12 +40,19 @@ function ShoppingCart($http) {
 				}
 			}
 		},
+		adjustQuantity: () => {
+
+		},
 		addProduct:(product, quantity) => {
-			let isInCart = alreadyExistsInCart(product);
-			if (isInCart) {
-				// if true - run adjust quantity function
+			if (!service.isCartEmpty()) {
+				let isInCart = service.alreadyExistsInCart(product);
+				if (isInCart) {
+					// if true - run adjust quantity function
+				} else {
+					// if false - run addToCart function
+				}
 			} else {
-				// if false - run addToCart function
+				// push item into cart
 			}
 			console.log(service.cart);
 		}
