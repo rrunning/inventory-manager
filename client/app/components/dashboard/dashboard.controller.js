@@ -1,5 +1,5 @@
 class DashboardController {
-	constructor(ShoppingDashboard, $localStorage) {
+	constructor() {
 		this.name = 'dashboard';
 	}
 }
