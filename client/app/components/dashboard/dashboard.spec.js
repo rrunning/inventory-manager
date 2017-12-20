@@ -1,4 +1,7 @@
 import DashboardModule from './dashboard'
+import DashboardController from './dashboard.controller'
+import DashboardComponent from './dashboard.component'
+import DashboardTemplate from './dashboard.html'
 
 describe('Dashboard', () => {
 	let $rootScope, $state, $location, $componentController, $compile;
