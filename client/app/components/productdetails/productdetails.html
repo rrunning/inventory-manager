@@ -30,7 +30,7 @@
 				<span ng-hide="$ctrl.allowEdit === true"> {{ $ctrl.importedProduct.price }}</span>
 				<input type="text" name="edit" ng-model="$ctrl.product.price" ng-show="$ctrl.allowEdit === true">
 			</div>
-			<div>
+			<div ng-hide="$ctrl.adminStatus === false">
 				Cost:
 				<span ng-hide="$ctrl.allowEdit === true"> {{ $ctrl.importedProduct.cost }}</span>
 				<input type="text" name="edit" ng-model="$ctrl.product.cost" ng-show="$ctrl.allowEdit === true">
