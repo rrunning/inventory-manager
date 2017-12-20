@@ -17,7 +17,8 @@ let componentModule = angular.module('app.components', [
   OrderHistory,
   Login,
   Productdetails,
-  Cart
+  Cart,
+  Dashboard
 ])
 
 .name;
