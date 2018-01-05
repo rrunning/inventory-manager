@@ -4,15 +4,18 @@
   height: 6.5rem;
   background-color: $primaryColor;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
 
   .nav-links,
   .logo {
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
   }
 
   .logo {
     color: $lightTextColor;
-    margin-right: 50%;
+    // margin-right: 50%;
   }
 
   .nav-links span {

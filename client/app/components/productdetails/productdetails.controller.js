@@ -9,12 +9,12 @@ class ProductdetailsController {
 		this.isAdmin();
 		this.allowEdit = false;
 	}
-	importProduct(id) {
-		this.ProductsService.importProduct(id).then(response => {
-			this.importedProduct = response.data;
-			console.log(importedProduct);
-		});
-	}
+	// importProduct(id) {
+	// 	this.ProductsService.importProduct(id).then(response => {
+	// 		this.importedProduct = response.data;
+	// 		// console.log(importedProduct);
+	// 	});
+	// }
 	isAdmin() {
 		if (this.Authentication.user.role === 'admin') {
 			this.adminStatus = true;
