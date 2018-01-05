@@ -8,7 +8,6 @@ class NavbarController {
   }
   setUserAs() {
     this.username = this.Authentication.user.email;
-    console.log(this.username);
   }
 }
 

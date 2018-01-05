@@ -4,11 +4,11 @@
 		<h1>Buy all the stuffs!</h1>
 	</div>
 	<div>Products:</div>
-	<div>[ This will be a list of all the products in the cart ]</div>
 		<table>
 			<tr>
 				<th>Product Name</th>
 				<th>Quantity</th>
+				<th>Price (Each)</th>
 			</tr>
 			<tr ng-repeat="(key, value) in $ctrl.cartItems">
 				<td>
@@ -16,6 +16,9 @@
 				</td>
 				<td>
 					<span>{{ value.qty }}</span>
+				</td>
+				<td>
+					<span>{{ value.price }}</span>
 				</td>
 			</tr>
 		</table>

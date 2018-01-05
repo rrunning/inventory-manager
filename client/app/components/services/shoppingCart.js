@@ -32,7 +32,7 @@ function ShoppingCart($http, $localStorage) {
 			const newQty = Number(quantity) + oldQty;
 			return newQty;
 		},
-		addProduct:(product, quantity) => {
+		addProduct:(product, quantity, price) => {
 			const prodId = product.id;
 			if (service.alreadyExistsInCart(product)) {
 				const cartQty = service.adjustQuantity(product, quantity);
@@ -41,7 +41,8 @@ function ShoppingCart($http, $localStorage) {
 				$localStorage.cart = service.cart;
 			} else {
 				// add to cart
-				service.cart[prodId] = { id: prodId, qty: Number(quantity) };
+				// console.log(price);
+				service.cart[prodId] = { id: prodId, qty: Number(quantity), price: price };
 				$localStorage.cart = service.cart;
 			}
 			console.log(service.cart);
