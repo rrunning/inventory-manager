@@ -7,6 +7,7 @@ import OrderHistory from './order-history/order-history';
 import Login from './login/login';
 import Productdetails from './productdetails/productdetails';
 import Cart from './cart/cart';
+import Administrator from './administrator/administrator';
 import Dashboard from './dashboard/dashboard';
 
 let componentModule = angular.module('app.components', [
@@ -18,6 +19,7 @@ let componentModule = angular.module('app.components', [
   Login,
   Productdetails,
   Cart,
+  Administrator,
   Dashboard,
 ])
 
