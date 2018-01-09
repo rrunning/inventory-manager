@@ -27,8 +27,8 @@ class ProductdetailsController {
 		const editedProd = {...this.importedProduct, ...this.product};
 		this.ProductsService.editProduct(editedProd).then(response => {
 			this.importedProduct = editedProd;
-			this.allowEdit = false;
 		})
+		this.allowEdit = false;
 	}
 	addToCart(product) {
 		const quantity = document.getElementById('prod-qty').value;
