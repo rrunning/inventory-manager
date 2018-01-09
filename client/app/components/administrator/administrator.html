@@ -18,6 +18,30 @@
 		</tr>
 	</table>
 	<div>
-		<button type="submit" ng-click="addNewProduct">New Product</button>
+		<button type="submit" ng-click="$ctrl.addNewProduct()">New Product</button>
+		<div ng-show="$ctrl.addNew === true">
+			<div>
+				Product Name:
+				<input type="text" name="new-product-name" ng-model="$ctrl.newProduct.name">
+			</div>
+			<div>
+				Product ID
+				<input type="text" name="new-product-id" ng-model="$ctrl.newProduct.id">
+			</div>
+			<div>
+				Product Cost
+				<input type="text" name="new-product-cost" ng-model="$ctrl.newProduct.cost">
+			</div>
+			<div>
+				Product Price
+				<input type="text" name="new-product-price" ng-model="$ctrl.newProduct.price">
+			</div>
+			<div>
+				Product Qty
+				<input type="text" name="new-product-amt" ng-model="$ctrl.newProduct.amt">
+			</div>
+			<button type="submit" ng-click="$ctrl.submitNewProduct($ctrl.newProduct)">Create Product</button>
+		</div>
+
 	</div>
 </main>
