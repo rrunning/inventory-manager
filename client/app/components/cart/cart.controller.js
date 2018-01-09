@@ -3,7 +3,7 @@ class CartController {
 		this.name = 'cart';
 		this.ShoppingCart = ShoppingCart;
 		this.cartItems = this.ShoppingCart.cart;
-		console.log($localStorage.cart);
+		// console.log($localStorage.cart);
 	}
 	itemInCartPrice() {
 		
