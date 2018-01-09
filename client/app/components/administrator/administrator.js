@@ -6,19 +6,24 @@ let administratorModule = angular.module('administrator', [
 	uiRouter
 ])
 
-	.config(($stateProvider, $urlRouterProvider) => {
+	.component('administrator', administratorComponent)
+
+	.config(($stateProvider) => {
 		"ngInject";
-
-		$urlRouterProvider.otherwise('/');
-
 		$stateProvider
 			.state('administrator', {
-				url: '/',
-				component: 'administrator'
+				url: '/administrator',
+				component: 'administrator',
+				resolve: {
+					productList: (ProductsService) => {
+						return ProductsService.fetchProducts().then(response => {
+							return response.data;
+						});
+					},
+				},
 			});
 	})
 
-	.component('administrator', administratorComponent)
 
 	.name;
 

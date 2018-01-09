@@ -9,12 +9,15 @@
 			<th>Price</th>
 			<th>Quantity</th>
 		</tr>
-		<tr>
-			<span>{{ product.name }}</span>
-			<span>{{ product.id }}</span>
-			<span>{{ product.cost }}</span>
-			<span>{{ product.price }}</span>
-			<span>{{ product.amt }}</span>
+		<tr ng-repeat="product in $ctrl.productList">
+			<td>{{ product.name }}</td>
+			<td>{{ product.id }}</td>
+			<td>{{ product.cost }}</td>
+			<td>{{ product.price }}</td>
+			<td>{{ product.amt }}</td>
 		</tr>
 	</table>
+	<div>
+		<button type="submit" ng-click="addNewProduct">New Product</button>
+	</div>
 </main>

@@ -3,7 +3,9 @@ import controller from './administrator.controller';
 import './administrator.scss';
 
 let administratorComponent = {
-	bindings: {},
+	bindings: {
+		productList: '<',
+	},
 	template,
 	controller
 };

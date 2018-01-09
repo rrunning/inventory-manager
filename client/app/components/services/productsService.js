@@ -15,6 +15,9 @@ function ProductsService($http) {
 		},
 		editProduct: (prod) => {
 			return $http.put('http://wta-inventorybackend.herokuapp.com/api/v1/product/' + prod.id, prod);
+		},
+		createProduct: () => {
+			return $http.put('http://wta-inventorybackend.herokuapp.com/api/v1/product');
 		}
 	}
 	return service;
