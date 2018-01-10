@@ -12,7 +12,7 @@ class AdministratorController {
 		this.addNew = true;
 	}
 	submitNewProduct() {
-		console.log(newProduct);
+		console.log(this.newProduct);
 		this.ProductsService.createProduct();
 	}
 }
