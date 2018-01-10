@@ -4,12 +4,14 @@
 	<table>
 		<tr>
 			<th>Product Name</th>
+			<th>Product Id</th>
 			<th>Cost</th>
 			<th>Price</th>
 			<th>Quantity</th>
 		</tr>
 		<tr ng-repeat="product in $ctrl.productList">
 			<td>{{ product.name }}</td>
+			<td>{{ product.id }}</td>
 			<td>{{ product.cost }}</td>
 			<td>{{ product.price }}</td>
 			<td>{{ product.amt }}</td>
@@ -23,8 +25,12 @@
 				<input type="text" name="new-product-name" ng-model="$ctrl.newProduct.name">
 			</div>
 			<div>
-				Product ID
-				<input type="text" name="new-product-id" ng-model="$ctrl.newProduct.id">
+				Product Description
+				<input type="text" name="new-product-description" ng-model="$ctrl.newProduct.description">
+			</div>
+			<div>
+				Product Qty
+				<input type="text" name="new-product-amt" ng-model="$ctrl.newProduct.amt">
 			</div>
 			<div>
 				Product Cost
@@ -35,9 +41,10 @@
 				<input type="text" name="new-product-price" ng-model="$ctrl.newProduct.price">
 			</div>
 			<div>
-				Product Qty
-				<input type="text" name="new-product-amt" ng-model="$ctrl.newProduct.amt">
+				Product Image
+				<input type="text" name="new-product-imgThumbnail" ng-model="$ctrl.newProduct.imgThumbnail">
 			</div>
+			
 			<button type="submit" ng-click="$ctrl.submitNewProduct($ctrl.newProduct)">Create Product</button>
 		</div>
 
