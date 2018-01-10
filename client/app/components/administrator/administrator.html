@@ -30,21 +30,20 @@
 			</div>
 			<div>
 				Product Qty
-				<input type="text" name="new-product-amt" ng-model="$ctrl.newProduct.amt">
+				<input type="number" name="new-product-amt" ng-model="$ctrl.newProduct.amt">
 			</div>
 			<div>
 				Product Cost
-				<input type="text" name="new-product-cost" ng-model="$ctrl.newProduct.cost">
+				<input type="number" name="new-product-cost" ng-model="$ctrl.newProduct.cost">
 			</div>
 			<div>
 				Product Price
-				<input type="text" name="new-product-price" ng-model="$ctrl.newProduct.price">
+				<input type="number" name="new-product-price" ng-model="$ctrl.newProduct.price">
 			</div>
 			<div>
 				Product Image
 				<input type="text" name="new-product-imgThumbnail" ng-model="$ctrl.newProduct.imgThumbnail">
 			</div>
-			
 			<button type="submit" ng-click="$ctrl.submitNewProduct($ctrl.newProduct)">Create Product</button>
 		</div>
 

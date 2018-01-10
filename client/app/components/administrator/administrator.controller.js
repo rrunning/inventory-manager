@@ -13,7 +13,10 @@ class AdministratorController {
 	}
 	submitNewProduct() {
 		console.log(this.newProduct);
-		this.ProductsService.createProduct();
+		this.ProductsService.createProduct(this.newProduct).then(response => {
+			const createdProduct = this.newProduct;
+			this.newProduct = {};
+		});
 	}
 }
 
