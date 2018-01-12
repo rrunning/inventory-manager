@@ -15,8 +15,8 @@ let administratorModule = angular.module('administrator', [
 		$stateProvider
 			.state('administrator', {
 				url: '/administrator',
-				component: 'administrator',
-				// abstract: true,
+				// component: 'administrator',
+				abstract: true,
 				resolve: {
 					productList: (ProductsService) => {
 						return ProductsService.fetchProducts().then(response => {
@@ -26,7 +26,7 @@ let administratorModule = angular.module('administrator', [
 				},
 			})
 			.state('administrator.adminProducts', {
-				url: '/administrator/products',
+				url: '/products',
 				component: 'adminProducts',
 			});
 	})

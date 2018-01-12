@@ -11,10 +11,10 @@ let adminProductsModule = angular.module('adminProducts', [
 	.config(($stateProvider) => {
 		"ngInject";
 		$stateProvider
-			.state('adminProducts', {
-				url: '/administrator/products',
-				component: 'adminProducts',
-			});
+			// .state('adminProducts', {
+			// 	url: '/products',
+			// 	component: 'adminProducts',
+			// });
 	})
 
 	.name;
