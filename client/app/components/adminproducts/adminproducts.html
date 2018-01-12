@@ -1,3 +1,50 @@
 <div>
-	<h1>{{ $ctrl.name }}</h1>
+	<h1 style="font-size: 45px;">{{ $ctrl.name }} THE UI-VIEW IS WORKING</h1>
 </div>
+<!-- <div>
+		<table>
+		<tr>
+			<th>Product Name</th>
+			<th>Product Id</th>
+			<th>Cost</th>
+			<th>Price</th>
+			<th>Quantity</th>
+		</tr>
+		<tr ng-repeat="product in $ctrl.productList">
+			<td>{{ product.name }}</td>
+			<td>{{ product.id }}</td>
+			<td>{{ product.cost }}</td>
+			<td>{{ product.price }}</td>
+			<td>{{ product.amt }}</td>
+		</tr>
+	</table>
+	<div>
+		<button type="submit" ng-click="$ctrl.addNewProduct()">New Product</button>
+		<div ng-show="$ctrl.addNew === true">
+			<div>
+				Product Name:
+				<input type="text" name="new-product-name" ng-model="$ctrl.newProduct.name">
+			</div>
+			<div>
+				Product Description
+				<input type="text" name="new-product-description" ng-model="$ctrl.newProduct.description">
+			</div>
+			<div>
+				Product Qty
+				<input type="number" name="new-product-amt" ng-model="$ctrl.newProduct.amt">
+			</div>
+			<div>
+				Product Cost
+				<input type="number" name="new-product-cost" ng-model="$ctrl.newProduct.cost">
+			</div>
+			<div>
+				Product Price
+				<input type="number" name="new-product-price" ng-model="$ctrl.newProduct.price">
+			</div>
+			<div>
+				Product Image
+				<input type="text" name="new-product-imgThumbnail" ng-model="$ctrl.newProduct.imgThumbnail">
+			</div>
+			<button type="submit" ng-click="$ctrl.submitNewProduct($ctrl.newProduct)">Create Product</button>
+		</div>
+</div> -->

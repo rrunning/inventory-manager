@@ -9,6 +9,7 @@ import Productdetails from './productdetails/productdetails';
 import Cart from './cart/cart';
 import Administrator from './administrator/administrator';
 import Dashboard from './dashboard/dashboard';
+import AdminProducts from './adminProducts/adminProducts';
 
 let componentModule = angular.module('app.components', [
   Home,
@@ -21,6 +22,7 @@ let componentModule = angular.module('app.components', [
   Cart,
   Administrator,
   Dashboard,
+  AdminProducts,
 ])
 
 .name;

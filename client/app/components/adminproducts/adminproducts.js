@@ -8,6 +8,15 @@ let adminProductsModule = angular.module('adminProducts', [
 
 	.component('adminProducts', adminProductsComponent)
 
+	.config(($stateProvider) => {
+		"ngInject";
+		$stateProvider
+			.state('adminProducts', {
+				url: '/administrator/products',
+				component: 'adminProducts',
+			});
+	})
+
 	.name;
 
 export default adminProductsModule;
