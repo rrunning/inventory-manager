@@ -28,6 +28,10 @@ let administratorModule = angular.module('administrator', [
 			.state('administrator.adminProducts', {
 				url: '/products',
 				component: 'adminProducts',
+			})
+			.state('administrator.adminTransactions', {
+				url: '/transactions',
+				component: 'adminTransactions',
 			});
 	})
 
