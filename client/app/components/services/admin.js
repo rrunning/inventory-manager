@@ -11,6 +11,10 @@ function Admin($http) {
 		// },
 		transactionSummary: () => {
 			return $http.get('http://wta-inventorybackend.herokuapp.com/api/v1/transaction');
+		},
+		importedTransaction: (transID) => {
+			console.log(transID);
+			return $http.get('http://wta-inventorybackend.herokuapp.com/api/v1/transaction/' + transID);
 		}
 	}
 	return service;

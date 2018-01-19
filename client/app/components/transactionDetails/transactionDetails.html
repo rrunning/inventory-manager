@@ -1,0 +1,25 @@
+<navbar></navbar>
+<div>
+  <table>
+    <tr>
+      <th>Transaction ID</th>
+      <th>Date</th>
+      <th>Total Cost</th>
+      <th>Total Price</th>
+      <th>Total Amt</th>
+      <th>Transaction Type</th>
+      <th>Notes</th>
+    </tr>
+    <tr ng-repeat="transaction in $ctrl.transactionList">
+      <td>
+        <a ng-click="$ctrl.viewTransactionDetails(transaction.id)">{{ transaction.id }}</a>
+      </td>
+      <td>{{ transaction.date }}</td>
+      <td>{{ transaction.totalCost }}</td>
+      <td>{{ transaction.totalPrice }}</td>
+      <td>{{ transaction.totalAmt }}</td>
+      <td>{{ transaction.type.description }}</td>
+      <td>{{ transaction.note }}</td>
+    </tr>
+  </table>
+</div>

@@ -25,7 +25,7 @@ let administratorModule = angular.module('administrator', [
 					},
 					transactionList: (Admin) => {
 						return Admin.transactionSummary().then(response => {
-							console.log(response.data);
+							// console.log(response.data);
 							return response.data;
 						})
 					},

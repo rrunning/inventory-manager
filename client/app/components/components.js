@@ -11,6 +11,7 @@ import Administrator from './administrator/administrator';
 import Dashboard from './dashboard/dashboard';
 import AdminProducts from './adminProducts/adminProducts';
 import AdminTransactions from './adminTransactions/adminTransactions';
+import TransactionDetails from './transactionDetails/transactionDetails';
 
 let componentModule = angular.module('app.components', [
   Home,
@@ -25,6 +26,7 @@ let componentModule = angular.module('app.components', [
   Dashboard,
   AdminProducts,
   AdminTransactions,
+  TransactionDetails,
 ])
 
 .name;

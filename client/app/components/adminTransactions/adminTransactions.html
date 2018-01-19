@@ -23,7 +23,9 @@
         <th>Notes</th>
       </tr>
       <tr ng-repeat="transaction in $ctrl.transactionList">
-        <td>{{ transaction.id }}</td>
+        <td>
+          <a ng-click="$ctrl.viewTransactionDetails(transaction.id)">{{ transaction.id }}</a>
+        </td>
         <td>{{ transaction.date }}</td>
         <td>{{ transaction.totalCost }}</td>
         <td>{{ transaction.totalPrice }}</td>
