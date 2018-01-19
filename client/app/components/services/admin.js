@@ -4,14 +4,17 @@ let adminModule = angular.module('about.admin', [])
 	.factory('Admin', Admin)
 	.name;
 
-function Admin() {
+function Admin($http) {
 	const service = {
-		productSummary: () => {
-			return $http.get('http://wta-inventorybackend.herokuapp.com/api/v1/product/summary');
-		},
+		// productSummary: () => {
+		// 	return $http.get('http://wta-inventorybackend.herokuapp.com/api/v1/product/summary');
+		// },
+		transactionSummary: () => {
+			return $http.get('http://wta-inventorybackend.herokuapp.com/api/v1/transaction');
+		}
 	}
 	return service;
 }
 
-// Admin.$inject = [];
+Admin.$inject = ['$http'];
 export default adminModule;

@@ -1,12 +1,9 @@
 <navbar></navbar>
 <div>
-	<h1 style="font-size: 45px;">{{ $ctrl.name }} THE UI-VIEW IS WORKING</h1>
-</div>
-<div>
 	<a ui-sref="administrator.adminProducts">
 		<button type="submit">Products</button>
 	</a>
-	<a ui-sref="">
+	<a ui-sref="administrator.adminTransactions">
 		<button type="submit" ng-click="">Transactions</button>
 	</a>
 </div>
@@ -56,4 +53,5 @@
 			</div>
 			<button type="submit" ng-click="$ctrl.submitNewProduct($ctrl.newProduct)">Create Product</button>
 		</div>
+	</div>
 </div>

@@ -5,6 +5,7 @@ import './administrator.scss';
 let administratorComponent = {
 	bindings: {
 		productList: '<',
+		transactionList: '<',
 	},
 	template,
 	controller

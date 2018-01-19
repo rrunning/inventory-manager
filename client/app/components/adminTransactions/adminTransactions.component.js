@@ -3,7 +3,9 @@ import controller from './admintransactions.controller';
 import './admintransactions.scss';
 
 let admintransactionsComponent = {
-  bindings: {},
+  bindings: {
+    transactionList: '<',
+  },
   template,
   controller
 };

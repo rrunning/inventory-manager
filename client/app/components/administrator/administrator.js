@@ -23,6 +23,12 @@ let administratorModule = angular.module('administrator', [
 							return response.data;
 						});
 					},
+					transactionList: (Admin) => {
+						return Admin.transactionSummary().then(response => {
+							console.log(response.data);
+							return response.data;
+						})
+					},
 				},
 			})
 			.state('administrator.adminProducts', {

@@ -1,9 +1,10 @@
 class AdministratorController {
-	constructor($stateParams, ProductsService) {
-		this.name = 'admin';
+	constructor($stateParams, ProductsService, Admin) {
+		this.name = 'administrator';
 		this.ProductsService = ProductsService;
 		this.addNew = false;
 		this.newProduct = {};
+		this.Admin = Admin;
 	}
 	fetch() {
 		this.ProductsService.fetchProducts();
@@ -20,5 +21,5 @@ class AdministratorController {
 	}
 }
 
-AdministratorController.$inject = ['$stateParams', 'ProductsService'];
+AdministratorController.$inject = ['$stateParams', 'ProductsService', "Admin"];
 export default AdministratorController;
