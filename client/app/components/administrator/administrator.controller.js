@@ -1,10 +1,10 @@
 class AdministratorController {
 	constructor($stateParams, ProductsService, Admin) {
 		this.name = 'administrator';
+		this.Admin = Admin;
 		this.ProductsService = ProductsService;
 		this.addNew = false;
 		this.newProduct = {};
-		this.Admin = Admin;
 	}
 	fetch() {
 		this.ProductsService.fetchProducts();
