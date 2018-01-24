@@ -10,16 +10,36 @@
       <th>Transaction Type</th>
       <th>Notes</th>
     </tr>
-    <tr ng-repeat="transaction in $ctrl.transactionList">
+    <!-- <tr ng-repeat="transaction in $ctrl.transactionList"> -->
       <td>
         <a ng-click="$ctrl.viewTransactionDetails(transaction.id)">{{ transaction.id }}</a>
       </td>
-      <td>{{ transaction.date }}</td>
-      <td>{{ transaction.totalCost }}</td>
-      <td>{{ transaction.totalPrice }}</td>
-      <td>{{ transaction.totalAmt }}</td>
-      <td>{{ transaction.type.description }}</td>
-      <td>{{ transaction.note }}</td>
+      <td>{{ $ctrl.importedTrans.date }}</td>
+      <td>{{ $ctrl.importedTrans.totalCost }}</td>
+      <td>{{ $ctrl.importedTrans.totalPrice }}</td>
+      <td>{{ $ctrl.importedTrans.totalAmt }}</td>
+      <td>{{ $ctrl.importedTrans.type.description }}</td>
+  </table>
+  <h3>Subtransactions</h3>
+  <table>
+    <tr>
+      <th>Product Name</th>
+      <th>Product ID</th>
+      <th>Amt</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Cost</th>
+      <th>Transaction ID</th>
     </tr>
+    <tr ng-repeat="transaction in $ctrl.importedTrans.subTransactions">
+      <td>{{ transaction.name }}</td>
+      <td>{{ transaction.productId }}</td>
+      <td>{{ transaction.amt }}</td>
+      <td>{{ transaction.summary.qty }}</td>
+      <td>{{ transaction.totalPrice }}</td>
+      <td>{{ transaction.totalCost }}</td>
+      <td>{{ transaction.transId }}</td>
+    </tr>
+    <!-- </tr> -->
   </table>
 </div>

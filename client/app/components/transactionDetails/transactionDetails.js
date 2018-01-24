@@ -17,7 +17,7 @@ let transactionDetailsModule = angular.module('transactionDetails', [
         resolve: {
           importedTrans: (Admin, $stateParams) => {
             return Admin.importedTransaction($stateParams.id).then (response => {
-              return response.data[0];
+              return response.data;
             });
           },
         }

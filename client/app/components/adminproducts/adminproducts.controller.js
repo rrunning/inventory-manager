@@ -5,7 +5,7 @@ class AdminproductsController {
 		this.ProductsService = ProductsService;
 		this.addNew = false;
 		this.newProduct = {};
-		console.log('ProductsService:',this.ProductsService);
+		// console.log('ProductsService:',this.ProductsService);
 	}
 	goToProduct(id) {
 		this.$state.go('productdetails', { id });

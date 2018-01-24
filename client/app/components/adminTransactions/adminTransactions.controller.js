@@ -4,7 +4,7 @@ class AdmintransactionsController {
     this.$state = $state;
   }
   viewTransactionDetails(id) {
-    console.log(id)
+    // console.log(id)
     this.$state.go('transactionDetails', {id});
   }
 }

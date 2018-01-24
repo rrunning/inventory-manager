@@ -4,7 +4,7 @@ import './transactionDetails.scss';
 
 let transactionDetailsComponent = {
   bindings: {
-    transaction: '<',
+    importedTrans: '<',
   },
   template,
   controller
