@@ -8,7 +8,7 @@
 	</a>
 </div>
 <div>
-		<table>
+	<table>
 		<tr>
 			<th>Product Name</th>
 			<th>Product Id</th>
@@ -17,7 +17,7 @@
 			<th>Quantity</th>
 		</tr>
 		<tr ng-repeat="product in $ctrl.productList">
-			<td>{{ product.name }}</td>
+			<td ng-click="$ctrl.goToProduct(product.id)">{{ product.name }}</a></td>
 			<td>{{ product.id }}</td>
 			<td>{{ product.cost }}</td>
 			<td>{{ product.price }}</td>
