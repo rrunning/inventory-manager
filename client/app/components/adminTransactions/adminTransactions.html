@@ -12,32 +12,33 @@
   <div ng-show="$ctrl.addNew === true">
     <div>
       Date:
-      <input type="text" name="new-transaction-date" ng-model="$ctrl.newTrans.date">
+      <input type="text" name="new-transaction-date" ng-model="$ctrl.newTransaction.date">
     </div>
     <div>
       ID:
-      <input type="text" name="new-transaction-id" ng-model="$ctrl.newTrans.id">
+      <input type="text" name="new-transaction-id" ng-model="$ctrl.newTransaction.id">
     </div>
     <div>
       Note:
-      <input type="text" name="new-transaction-note" ng-model="$ctrl.newTrans.note">
+      <input type="text" name="new-transaction-note" ng-model="$ctrl.newTransaction.note">
     </div>
     <div>
       Total Amount:
-      <input type="text" name="new-transaction-totalAmt" ng-model="$ctrl.newTrans.totalAmt">
+      <input type="text" name="new-transaction-totalAmt" ng-model="$ctrl.newTransaction.totalAmt">
     </div>
     <div>
       Total Cost:
-      <input type="text" name="new-transaction-totalCost" ng-model="$ctrl.newTrans.totalCost">
+      <input type="text" name="new-transaction-totalCost" ng-model="$ctrl.newTransaction.totalCost">
     </div>
     <div>
       Total Price:
-      <input type="text" name="new-transaction-totalPrice" ng-model="$ctrl.newTrans.totalPrice">
+      <input type="text" name="new-transaction-totalPrice" ng-model="$ctrl.newTransaction.totalPrice">
     </div>
     <div>
       Type:
-      <input type="text" name="new-transaction-type" ng-model="$ctrl.newTrans.type">
+      <input type="text" name="new-transaction-type" ng-model="$ctrl.newTransaction.type">
     </div>
+    <button type="submit" ng-click="$ctrl.submitNewTransaction($ctrl.newTransaction)">Create Transaction</button>
   </div>
 </div>
 <div>

@@ -15,6 +15,9 @@ function Admin($http) {
 		importedTransaction: (transID) => {
 			console.log(transID);
 			return $http.get('http://wta-inventorybackend.herokuapp.com/api/v1/transaction/' + transID);
+		},
+		createTransaction: (newTrans) => {
+			return $http.post('http://wta-inventorybackend.herokuapp.com/api/v1/transaction', newTrans);
 		}
 	}
 	return service;

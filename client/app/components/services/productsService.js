@@ -17,7 +17,6 @@ function ProductsService($http) {
 			return $http.put('http://wta-inventorybackend.herokuapp.com/api/v1/product/' + prod.id, prod);
 		},
 		createProduct: (newProd) => {
-			console.log
 			return $http.post('http://wta-inventorybackend.herokuapp.com/api/v1/product', newProd);
 		}
 	}
