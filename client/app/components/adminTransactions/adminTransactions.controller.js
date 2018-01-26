@@ -4,7 +4,10 @@ class AdmintransactionsController {
     this.Admin = Admin;
     this.$state = $state;
     this.addNew = false;
-    this.newTransaction = {};
+    this.newTransaction = {
+      subTransactions: [],
+    };
+    this.subTransaction = {};
   }
   viewTransactionDetails(id) {
     // console.log(id)
@@ -14,6 +17,10 @@ class AdmintransactionsController {
     this.addNew = true;
   }
   submitNewTransaction() {
+    console.log(this.newTransaction);
+    console.log(this.subTransaction);
+    this.newTransaction.subTransactions.push(this.subTransaction);
+    console.log(this.newTransaction);
     this.Admin.createTransaction(this.newTransaction).then(response =>{
       const createdTransaction = this.newTransaction;
       this.newTransaction = {};

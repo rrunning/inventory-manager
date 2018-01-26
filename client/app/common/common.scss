@@ -9,10 +9,18 @@ $lightTextColor: #cfcdcd;
 $darkTextColor:  #0c0c0c;
 
 body {
-   height: 100%;
-   // browsers default to 16px for font-size,
-   // so setting top-level font-size to 62.5%
-   // scales 1rem to equal 10px.
-   font: 62.5% 'Roboto', sans-serif;
+  height: 100%;
+  // browsers default to 16px for font-size,
+  // so setting top-level font-size to 62.5%
+  // scales 1rem to equal 10px.
+  font: 62.5% 'Roboto', sans-serif;
+  color: $lightTextColor;
+  button {
+    color: $darkTextColor;
+  }
+  input {
+    color: $darkTextColor;
+  }
+  
 }
 

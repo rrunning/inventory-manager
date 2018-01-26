@@ -14,31 +14,66 @@
       Date:
       <input type="text" name="new-transaction-date" ng-model="$ctrl.newTransaction.date">
     </div>
-    <div>
+    <!-- <div>
       ID:
-      <input type="text" name="new-transaction-id" ng-model="$ctrl.newTransaction.id">
-    </div>
+      <input type="number" name="new-transaction-id" ng-model="$ctrl.newTransaction.id">
+    </div> -->
     <div>
       Note:
       <input type="text" name="new-transaction-note" ng-model="$ctrl.newTransaction.note">
     </div>
     <div>
       Total Amount:
-      <input type="text" name="new-transaction-totalAmt" ng-model="$ctrl.newTransaction.totalAmt">
+      <input type="number" name="new-transaction-totalAmt" ng-model="$ctrl.newTransaction.totalAmt">
     </div>
     <div>
       Total Cost:
-      <input type="text" name="new-transaction-totalCost" ng-model="$ctrl.newTransaction.totalCost">
+      <input type="number" name="new-transaction-totalCost" ng-model="$ctrl.newTransaction.totalCost">
     </div>
     <div>
       Total Price:
-      <input type="text" name="new-transaction-totalPrice" ng-model="$ctrl.newTransaction.totalPrice">
+      <input type="number" name="new-transaction-totalPrice" ng-model="$ctrl.newTransaction.totalPrice">
     </div>
     <div>
-      Type:
-      <input type="text" name="new-transaction-type" ng-model="$ctrl.newTransaction.type">
+      Type [Description]:
+      <input type="text" name="new-transaction-type" ng-model="$ctrl.newTransaction.type.description">
     </div>
-    <button type="submit" ng-click="$ctrl.submitNewTransaction($ctrl.newTransaction)">Create Transaction</button>
+    <div>
+      Type [Id]:
+      <input type="number" name="new-transaction-type" ng-model="$ctrl.newTransaction.type.id">
+    </div>
+    <div>
+      Subtransactions:
+    </div>
+    <div>
+      Product Name:
+      <input type="text" name="new-subTransaction-prodName" ng-model="$ctrl.subTransaction.prodName">
+    </div>
+    <div>
+      Product ID:
+      <input type="number" name="new-subTransaction-prodID" ng-model="$ctrl.subTransaction.id">
+    </div>
+    <div>
+      Amount:
+      <input type="number" name="new-subTransaction-amt" ng-model="$ctrl.subTransaction.amt">
+    </div>
+    <div>
+      Quantity:
+      <input type="number" name="new-subTransaction-quantity" ng-model="$ctrl.subTransaction.qty">
+    </div>
+    <div>
+      Subtotal:
+      <input type="number" name="new-subTransaction-totalPrice" ng-model="$ctrl.subTransaction.totalPrice">
+    </div>
+    <div>
+      Total Cost:
+      <input type="number" name="new-subTransaction-totalCost" ng-model="$ctrl.subTransaction.totalCost">
+    </div>
+    <div>
+      Transaction ID:
+      <input type="number" name="new-subTransaction-transId" ng-model="$ctrl.subTransaction.transId">
+    </div>
+    <button type="submit" ng-click="$ctrl.submitNewTransaction()">Create Transaction</button>
   </div>
 </div>
 <div>
