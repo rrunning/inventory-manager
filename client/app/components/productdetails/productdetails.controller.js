@@ -23,6 +23,9 @@ class ProductdetailsController {
 	initiateEdit() {
 		this.allowEdit = true;
 	}
+	deleteProduct(prodId) {
+		this.ProductsService.deleteProd(prodId);
+	}
 	saveEdit() {
 		const editedProd = {...this.importedProduct, ...this.product};
 		this.ProductsService.editProduct(editedProd).then(response => {
@@ -38,11 +41,9 @@ class ProductdetailsController {
 	modifyQty(val) {
     const qty = document.getElementById('prod-qty').value;
     let newQty = parseInt(qty,10) + val;
-    
     if (newQty < 0) {
         newQty = 0;
     }
-    
 		document.getElementById('prod-qty').value = newQty;
     return newQty;
 	}

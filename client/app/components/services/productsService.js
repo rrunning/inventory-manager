@@ -18,6 +18,9 @@ function ProductsService($http) {
 		},
 		createProduct: (newProd) => {
 			return $http.post('http://wta-inventorybackend.herokuapp.com/api/v1/product', newProd);
+		},
+		deleteProd: (prodId) => {
+			return $http.delete('http://wta-inventorybackend.herokuapp.com/api/v1/product/' + prodId);
 		}
 	}
 	return service;

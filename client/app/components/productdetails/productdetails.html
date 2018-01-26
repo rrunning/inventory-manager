@@ -5,7 +5,7 @@
 	<div class="admin-edit">
 		<button ng-click="$ctrl.initiateEdit()" ng-hide="$ctrl.adminStatus === false">Edit Details</button>
 		<button ng-click="$ctrl.saveEdit()" ng-hide="$ctrl.adminStatus === false">Save Edits</button>
-		<button ng-click="$ctrl.deleteProduct()" ng-hide="$ctrl.adminStatus === false">Delete Product</button>
+		<button ng-click="$ctrl.deleteProduct($ctrl.importedProduct.id)" ng-hide="$ctrl.adminStatus === false">Delete Product</button>
 	</div>
 	<div class="product-list">
 		<div class="product">
