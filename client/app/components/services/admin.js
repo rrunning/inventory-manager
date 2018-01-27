@@ -18,6 +18,9 @@ function Admin($http) {
 		},
 		createTransaction: (newTrans) => {
 			return $http.post('http://wta-inventorybackend.herokuapp.com/api/v1/transaction', newTrans);
+		},
+		editTransaction: (transID) => {
+			return $http.put('http://wta-inventorybackend.herokuapp.com/api/v1/transaction/' + transID);
 		}
 	}
 	return service;

@@ -1,5 +1,10 @@
 <navbar></navbar>
 <div>
+  <div>
+    <button ng-click="$ctrl.initiateEdit()">Edit Transaction</button>
+    <button ng-show="$ctrl.editMode === true" ng-click="$ctrl.cancelEdit()">Cancel Edits</button>
+    <button ng-show="$ctrl.editMode === true" ng-click="$ctrl.saveEdit($ctrl.importedTrans.id)">Save Edits</button>
+  </div>    
   <table>
     <tr>
       <th>Transaction ID</th>
@@ -10,15 +15,34 @@
       <th>Transaction Type</th>
       <th>Notes</th>
     </tr>
-    <!-- <tr ng-repeat="transaction in $ctrl.transactionList"> -->
       <td>
-        <a ng-click="$ctrl.viewTransactionDetails(transaction.id)">{{ transaction.id }}</a>
+        <div ng-hide="$ctrl.editMode === true">{{ $ctrl.importedTrans.id }}</div>
+        <div ng-show="$ctrl.editMode === true"><input></div>
       </td>
-      <td>{{ $ctrl.importedTrans.date }}</td>
-      <td>{{ $ctrl.importedTrans.totalCost }}</td>
-      <td>{{ $ctrl.importedTrans.totalPrice }}</td>
-      <td>{{ $ctrl.importedTrans.totalAmt }}</td>
-      <td>{{ $ctrl.importedTrans.type.description }}</td>
+      <td>
+        <div ng-hide="$ctrl.editMode === true">{{ $ctrl.importedTrans.date }}</div>
+        <div ng-show="$ctrl.editMode === true"><input></div>
+      </td>
+      <td>
+        <div ng-hide="$ctrl.editMode === true">{{ $ctrl.importedTrans.totalCost }}</div>
+        <div ng-show="$ctrl.editMode === true"><input></div>
+      </td>
+      <td>
+        <div ng-hide="$ctrl.editMode === true">{{ $ctrl.importedTrans.totalPrice }}</div>
+        <div ng-show="$ctrl.editMode === true"><input></div>
+      </td>
+      <td>
+        <div ng-hide="$ctrl.editMode === true">{{ $ctrl.importedTrans.totalAmt }}</div>
+        <div ng-show="$ctrl.editMode === true"><input></div>
+      </td>
+      <td>
+        <div ng-hide="$ctrl.editMode === true">{{ $ctrl.importedTrans.type.description }}</div>
+        <div ng-show="$ctrl.editMode === true"><input></div>
+      </td>
+      <td>
+        <div ng-hide="$ctrl.editMode === true">{{ $ctrl.importedTrans.note }}</div>
+        <div ng-show="$ctrl.editMode === true"><input></div>
+      </td>
   </table>
   <h3>Subtransactions</h3>
   <table>
@@ -32,14 +56,34 @@
       <th>Transaction ID</th>
     </tr>
     <tr ng-repeat="transaction in $ctrl.importedTrans.subTransactions">
-      <td>{{ transaction.name }}</td>
-      <td>{{ transaction.productId }}</td>
-      <td>{{ transaction.amt }}</td>
-      <td>{{ transaction.summary.qty }}</td>
-      <td>{{ transaction.totalPrice }}</td>
-      <td>{{ transaction.totalCost }}</td>
-      <td>{{ transaction.transId }}</td>
+      <td>
+        <div ng-hide="$ctrl.editMode === true">{{ transaction.name }}</div>
+        <div ng-show="$ctrl.editMode === true"><input></div>
+      </td>
+      <td>
+        <div ng-hide="$ctrl.editMode === true">{{ transaction.productId }}</div>
+        <div ng-show="$ctrl.editMode === true"><input></div>
+      </td>
+      <td>
+        <div ng-hide="$ctrl.editMode === true">{{ transaction.amt }}</div>
+        <div ng-show="$ctrl.editMode === true"><input></div>
+      </td>
+      <td>
+        <div ng-hide="$ctrl.editMode === true">{{ transaction.summary.qty }}</div>
+        <div ng-show="$ctrl.editMode === true"><input></div>
+      </td>
+      <td>
+        <div ng-hide="$ctrl.editMode === true">{{ transaction.totalPrice }}</div>
+        <div ng-show="$ctrl.editMode === true"><input></div>
+      </td>
+      <td>
+        <div ng-hide="$ctrl.editMode === true">{{ transaction.totalCost }}</div>
+        <div ng-show="$ctrl.editMode === true"><input></div>
+      </td>
+      <td>
+        <div ng-hide="$ctrl.editMode === true">{{ transaction.transId }}</div>
+        <div ng-show="$ctrl.editMode === true"><input></div>
+      </td>
     </tr>
-    <!-- </tr> -->
   </table>
 </div>
